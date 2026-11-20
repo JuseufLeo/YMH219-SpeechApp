@@ -17,6 +17,10 @@ Bu proje **Nesne Tabanlı Programlama (YMH 219)** dersi ek uygulama ödevi kapsa
 
 Alttaki renkli şerit hangi işlemin aktif olduğunu gösterir (yeşil: okunuyor, turuncu: duraklatıldı, mavi: mikrofon dinleniyor, gri: boşta).
 
+**Gerçek Türkçe konuşma testi:** Mikrofona söylenen üç Türkçe cümle, internet bağlantısı olmadan, çevrimdışı Vosk modeliyle yazıya çevrildi. Her cümle zaman ve güven değeriyle listelendi (%100, %95, %96).
+
+![Türkçe konuşma tanıma](screenshots/03-turkce-tanima.png)
+
 ## Kullanılan Teknolojiler / NuGet Paketleri
 
 | Paket | Kullanım amacı |
@@ -63,5 +67,5 @@ Gereksinimler: Windows 10/11 (64 bit), hoparlör, mikrofon. Windows'ta *Ayarlar 
 ## Bilinen Sınırlamalar / Geliştirme Notları
 
 - Okuma sesi, Windows'ta yüklü SAPI seslerine bağlıdır. Bu bilgisayarda yalnızca İngilizce *Microsoft Zira* sesi olduğu için örnek metin İngilizcedir; Türkçe bir ses (ör. *Microsoft Tolga*) yüklüyse listeden seçilebilir.
-- "Küçük" Türkçe model hızlıdır ama gürültülü ortamda ve özel isimlerde hata yapabilir; daha büyük bir Vosk modeli `Models` klasörüne eklenerek listeden seçilebilir.
+- "Küçük" Türkçe model hızlıdır ama gürültülü ortamda, hızlı konuşmada ve özel isimlerde hata yapabilir. Testlerde mikrofona yakın, yavaş ve kısa cümlelerle konuşulduğunda doğruluk belirgin şekilde artmıştır; daha büyük bir Vosk modeli `Models` klasörüne eklenerek listeden seçilebilir.
 - Windows'un yerleşik konuşma tanıması (`System.Speech.Recognition`) Türkçeyi desteklemediği için Vosk tercih edilmiştir.
